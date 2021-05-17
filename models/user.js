@@ -14,10 +14,29 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.user.belongsToMany(models.meme,{through: 'bank'})
     }
   };
   user.init({
-    name: {
+    first_name: {
+      type: DataTypes.STRING,
+      validate: {
+        len: {
+          args: [1,99],
+          msg: 'Name must be between 1 and 99 characters'
+        }
+      }
+    },
+    last_name: {
+      type: DataTypes.STRING,
+      validate: {
+        len: {
+          args: [1,99],
+          msg: 'Name must be between 1 and 99 characters'
+        }
+      }
+    },
+    user_name: {
       type: DataTypes.STRING,
       validate: {
         len: {

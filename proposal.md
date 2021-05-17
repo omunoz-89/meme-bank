@@ -20,4 +20,15 @@ Requirements for the weekend
 
 `6` Resource's Restful Routing table ( [Readme](https://romebell.gitbook.io/sei-412/node-express/00readme-1/01intro-to-express/00readme#restful-routing) )
 
+| VERB | URL | Action \(CRUD\) | Description |
+| :--- | :--- | :--- | :--- |
+| GET | / | Index \(Read\) | SignUp/Login page |
+| GET | /bank | Index \(Read\) | Show your saved memes |
+| GET | /bank/new | New \(Read\) | shows a form to make a new meme |
+| POST | /bank | Create \(Create\) | creates a meme with the POST payload data |
+| GET | /bank/:id | Show \(Read\) | list information about a specific meme \(i.e. /bank/1\) |
+| GET | /bank/edit/:id | Edit \(Read\) | shows a form for editting a specific meme \(i.e. /bank/edit/1\) |
+| PUT | /bank/:id | Update \(Update\) | updates the data for a specific meme \(i.e. /bank/1\) |
+| DELETE | /bank/:id | Destroy \(Delete\) | deletes the meme with the specified id \(i.e. /bank/1\) |
+
 `7` Find API and test to see if you can get data ( *be able to print data in the console using Axios, Node-Fetch, and/or Postman* )
