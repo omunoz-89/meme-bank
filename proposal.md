@@ -5,7 +5,7 @@ Requirements for the weekend
 - Meme Bank: Save and share your favorite memes. Create memes buy uploading images and adding text.
 
 `2` A repo for your project 2 (built from express_auth template)
-- Created during Fridays example
+- https://github.com/omunoz-89/meme-bank
 
 `3` Wireframe for your app - (Lucidchart)
 ![MemeBank](images/readme/MemeBank.png)
