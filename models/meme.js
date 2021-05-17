@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   meme.init({
+    img_url: DataTypes.STRING,
     top_text: DataTypes.STRING,
     bottom_text: DataTypes.STRING,
     title: DataTypes.STRING
