@@ -5,5 +5,23 @@ nav ul li {
 }
 
 h1 {
-  color: chartreuse;
+  color: rgb(0, 0, 0);
+}
+
+.memeImg {
+  width: 80px;
+  height: 80px;
+}
+
+
+.container {
+  max-height:100px;
+  width: 100%;
+  overflow: scroll;  
+}
+
+.memes
+{
+  height: 80px;
+  width: 100%;
 }

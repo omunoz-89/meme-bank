@@ -45,6 +45,9 @@ app.get('/profile', isLoggedIn, (req, res) => {
 });
 
 app.use('/auth', require('./controllers/auth'));
+app.use('/new_meme', require('./controllers/new_meme'));
+
+
 
 
 const PORT = process.env.PORT || 3000;
