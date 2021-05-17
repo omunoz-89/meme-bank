@@ -4,12 +4,12 @@ const LocalStrategy = require('passport-local').Strategy;
 const db = require('../models'); //Database
 
 const STRATEGY = new LocalStrategy({
-    usernameField: 'email',
+    usernameField: 'user_name',
     passwordField: 'password'
-}, async (email, password, cb) => {
+}, async (user_name, password, cb) => {
     try {
         const user = await db.user.findOne({
-            where: { email}
+            where: { user_name}
         });
         if (!user || !user.validPassword(password)) {
             cb(null,false);

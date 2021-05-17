@@ -40,8 +40,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/profile', isLoggedIn, (req, res) => {
-  const { id, name, email } = req.user.get();
-  res.render('profile', { id, name, email });
+  const { id, first_name, last_name, user_name, email } = req.user.get();
+  res.render('profile', { id, first_name, last_name, user_name, email });
 });
 
 app.use('/auth', require('./controllers/auth'));
