@@ -11,6 +11,7 @@ Requirements for the weekend
 ![MemeBank](images/readme/MemeBank.png)
 
 `4` An ERD with two models (minimum) > User + 1 Resource (one to many) - (Lucidchart)
+![MemeBank](images/readme/ERD.png)
 
 `5` Create (3-5) User Stories for the base user experience - ( [Reference](https://revelry.co/resources/development/user-stories-that-dont-suck/) )
 - As a user when I go to the site, I want to be able to log on, so I can view my saved/created memes
