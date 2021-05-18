@@ -8,14 +8,11 @@ router.get('/', (req, res) => {
     res.render('bank');
   });
 
-  router.get('/new_meme', (req,res) => {
-    axios.get('https://api.imgflip.com/get_memes')
-    .then(response => {
-      let memes = response.data.data.memes
-      res.render('new_meme', {meme:memes})
-    })
-  })
-
+  // router.get("/:id", async function (req, res) {
+  //   const findMeme = await db.bank.findOne({where:{memeId:req.params.id}});
+  //   const memeUrl = await db.meme.findOne({where:{id:req.findMeme}})
+  //   res.render("show", { memeUrl });
+  // });
 
 
 module.exports = router;
