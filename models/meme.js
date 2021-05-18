@@ -11,10 +11,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.meme.belongsToMany(models.user,{through: 'bank'})
+      models.meme.belongsTo(models.user)
     }
   };
   meme.init({
+    userId: DataTypes.INTEGER,
     img_url: DataTypes.STRING,
     top_text: DataTypes.STRING,
     bottom_text: DataTypes.STRING,
