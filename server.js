@@ -45,7 +45,8 @@ app.get('/profile', isLoggedIn, (req, res) => {
 });
 
 app.use('/auth', require('./controllers/auth'));
-app.use('/new_meme', require('./controllers/new_meme'));
+app.use('/meme', require('./controllers/meme'));
+app.use('/bank', require('./controllers/bank'));
 
 
 

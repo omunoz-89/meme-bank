@@ -9,7 +9,7 @@ router.get('/', (req,res) => {
   .then(response => {
     let memes = response.data.data.memes
     // console.log(memes)
-    res.render('new_meme', {meme:memes})
+    res.render('meme', {meme:memes})
   })
 })
 
