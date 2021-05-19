@@ -23,6 +23,9 @@ router.post('/', async (req,res) => {
     const response = await fetch(`https://api.imgflip.com/caption_image?template_id=${memeId}&username=${process.env.IMG_USER}&password=${process.env.IMG_PASS}&text0=${top_text}&text1=${bottom_text}`)
     const responseData = await response.json()
     const img = responseData.data.url
+    if(img){
+      res.render('show', {newMeme: img})
+    }
   } catch (error) {
     console.log('------ Error ------');
     console.log(error);
