@@ -6,6 +6,8 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('./config/ppConfig');
 const isLoggedIn = require('./middleware/isLoggedIn');
+const db = require('./models');
+
 
 const SECRET_SESSION = process.env.SECRET_SESSION;
 
@@ -35,8 +37,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/', (req, res) => {
-  res.render('index', {});
+app.get('/', async (req, res) => {
+  const memes = await db.meme.findAll()
+  res.render('index', {memes:memes});
 });
 
 app.get('/profile', isLoggedIn, (req, res) => {

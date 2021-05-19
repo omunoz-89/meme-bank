@@ -14,14 +14,8 @@ module.exports = {
       img_url: {
         type: Sequelize.STRING
       },
-      top_text: {
-        type: Sequelize.STRING
-      },
-      bottom_text: {
-        type: Sequelize.STRING
-      },
-      title: {
-        type: Sequelize.STRING
+      private: {
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,

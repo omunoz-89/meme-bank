@@ -17,9 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   meme.init({
     userId: DataTypes.INTEGER,
     img_url: DataTypes.STRING,
-    top_text: DataTypes.STRING,
-    bottom_text: DataTypes.STRING,
-    title: DataTypes.STRING
+    private: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'meme',
