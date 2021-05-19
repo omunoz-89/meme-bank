@@ -1,15 +1,17 @@
 <h1>Select Image</h1>
-<img src="<%= meme0.url %>" alt="<%= meme0.name %>" class="memeImg">
-<div>
-    <form action="/meme" method="POST">
-        <select name='template'>
-            <% meme.forEach(meme => { %>
-            <option><%= meme.name %></option>
-            <% }) %>
-          </select> 
-        <input type="top_text" name="top_text" placeholder="Top Text">
-        <input type="bottom_text" name="bottom_text" placeholder="Bottom Text">
-        <button>Generate</button>
-    </form>
-</div>
 
+  <div class="container">
+    <div class="row">
+  <% meme.forEach(meme => { %>
+    <div class="col">
+  <div class="card">
+    <img src="<%= meme.url %>"" class="memeImg card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"><%= meme.name %></h5>
+      <a href="#" class="btn btn-primary" onclick="createMeme()">Create Meme</a>
+    </div>
+  </div>
+</div>
+  <% }) %>
+</div>
+</div>

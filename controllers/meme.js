@@ -5,14 +5,6 @@ const axios = require('axios');
 const db = require('../models');
 const fetch = require('node-fetch');
 
-// router.get('/', (req,res) => {
-//   axios.get('https://api.imgflip.com/get_memes')
-//   .then(response => {
-//     let memes = response.data.data.memes
-//     // console.log(memes)
-//     res.render('meme', {meme:memes})
-//   })
-// })
 
 router.get('/', async (req,res) => {
   const response = await fetch('https://api.imgflip.com/get_memes');
