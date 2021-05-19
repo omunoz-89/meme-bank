@@ -1,9 +1,15 @@
 <h1>Select Image</h1>
-<div class="slideshow">
-    <div class="memes">
-<% meme.forEach(meme => { %>
-    <img src="<%= meme.url %>" alt="" class="memeImg">
+<img src="<%= meme0.url %>" alt="<%= meme0.name %>" class="memeImg">
+<div>
+    <form action="/meme" method="POST">
+        <select name='template'>
+            <% meme.forEach(meme => { %>
+            <option><%= meme.name %></option>
+            <% }) %>
+          </select> 
+        <input type="top_text" name="top_text" placeholder="Top Text">
+        <input type="bottom_text" name="bottom_text" placeholder="Bottom Text">
+        <button>Generate</button>
+    </form>
+</div>
 
-<% }) %>
-</div>
-</div>
