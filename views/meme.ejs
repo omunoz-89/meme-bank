@@ -1,14 +1,28 @@
-<h1>Select Image</h1>
+<div id="memeDisplay" class="showContainer container">
+    <div class="row">
+<div class="col">
+    <img id="selectedMeme" src="<%= meme0.url %>" alt="">
+</div>
+<div class="col">
+    <form action="" method="post">
+        <input type="text">
+        <input type="text">
+        <button class="btn btn-primary">Generate</button>
+    </form>
+</div>
+</div>
+</div>
+
 
   <div class="container">
     <div class="row">
   <% meme.forEach(meme => { %>
     <div class="col">
   <div class="card">
-    <img src="<%= meme.url %>"" class="memeImg card-img-top" alt="...">
+    <img id='<%= meme.id %>' src="<%= meme.url %>" class="memeImg card-img-top" alt="..." >
     <div class="card-body">
       <h5 class="card-title"><%= meme.name %></h5>
-      <a href="#" class="btn btn-primary" onclick="createMeme()">Create Meme</a>
+      <a href="#" class="btn btn-primary" id='<%= meme.url %>' onclick="createMeme(this)">Create Meme</a>
     </div>
   </div>
 </div>
