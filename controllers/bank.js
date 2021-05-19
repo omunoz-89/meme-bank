@@ -13,6 +13,12 @@ const isLoggedIn = require('../middleware/isLoggedIn');
     res.render("bank", {memes: findMemes });
   });
 
+  router.post('/', async function (req,res) {
+    const {memeId} = req.body;
+    console.log(memeId)
+    const deleteMeme = await db.meme.destroy({where:{id:memeId}})
+    res.redirect('bank')
+  })
   
 
 

@@ -1,9 +1,20 @@
 <h1>Bank</h1>
 
-<% memes.forEach(meme => { %>
-    <img src="<%= meme.img_url %> " alt="">
-<% }) %>
-
-<p>
-<%= memes.title %> 
-</p>
+<div class="container">
+    <div class="row">
+  <% memes.forEach(meme => { %>
+    
+    <div class="col">
+        <form action="/bank" method="POST">
+  <div class="card">
+    <img src="<%= meme.img_url %>" class="memeImg card-img-top">
+    <div class="card-body">
+      <input type="text" id="memeId" name="memeId" class="form-control" value="<%= meme.id %>" hidden>
+      <button type="submit" class="btn btn-primary">Delete</button>
+    </div>
+  </div>
+</div>
+</form>
+  <% }) %>
+</div>
+</div>
