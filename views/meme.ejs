@@ -1,18 +1,22 @@
+<form action="/meme" method="POST">
 <div id="memeDisplay" class="showContainer container">
     <div class="row">
 <div class="col">
     <img id="selectedMeme" src="<%= meme0.url %>" alt="">
 </div>
-<div class="col">
-    <form action="" method="post">
-        <input type="text">
-        <input type="text">
-        <button class="btn btn-primary">Generate</button>
-    </form>
-</div>
-</div>
-</div>
+<div class="col mb-3">
+        <input type="text" id="memeId" name="memeId" class="form-control" value="<%= meme0.id %>" hidden>
+        <label for="top_text" class="form-label">Top Text</label>
+        <input type="text" id="top_text" name="top_text" class="form-control">
+        <label for="bottom_text" class="form-label">Bottom Text</label>
 
+        <input type="text" id="bottom_text" name="bottom_text" class="form-control">
+        <button type="submit" class="btn btn-primary">Generate</button>
+    
+</div>
+</div>
+</div>
+</form>
 
   <div class="container">
     <div class="row">
@@ -22,7 +26,7 @@
     <img id='<%= meme.id %>' src="<%= meme.url %>" class="memeImg card-img-top" alt="..." >
     <div class="card-body">
       <h5 class="card-title"><%= meme.name %></h5>
-      <a href="#" class="btn btn-primary" id='<%= meme.url %>' onclick="createMeme(this)">Create Meme</a>
+      <a href="#" class="btn btn-primary" id='<%= meme.id %>' name='<%= meme.url %>' onclick="createMeme(this)">Create Meme</a>
     </div>
   </div>
 </div>

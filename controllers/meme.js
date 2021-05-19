@@ -17,7 +17,7 @@ router.get('/', async (req,res) => {
 })
 
 router.post('/', async (req,res) => {
-  const {template,top_text,bottom_text} = req.body;
+  const {memeId,top_text,bottom_text} = req.body;
   console.log(req.body)
 })
 
