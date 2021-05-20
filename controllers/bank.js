@@ -19,6 +19,22 @@ const isLoggedIn = require('../middleware/isLoggedIn');
     const deleteMeme = await db.meme.destroy({where:{id:memeId}})
     res.redirect('bank')
   })
+
+  router.post('/private', async function (req,res) {
+    const {privateId} = req.body;
+    console.log(privateId)
+    const findMeme = await db.meme.findOne({where:{id:privateId}})
+    const update = await findMeme.update({private:true})
+    res.redirect('/bank')
+  })
+
+  router.post('/public', async function (req,res) {
+    const {publicId} = req.body;
+    console.log(publicId)
+    const findMeme = await db.meme.findOne({where:{id:publicId}})
+    const update = await findMeme.update({private:false})
+    res.redirect('/bank')
+  })
   
 
 

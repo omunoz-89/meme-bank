@@ -5,16 +5,32 @@
   <% memes.forEach(meme => { %>
     
     <div class="col">
-        <form action="/bank" method="POST">
+        
   <div class="card">
     <img src="<%= meme.img_url %>" class="memeImg card-img-top">
     <div class="card-body">
-      <input type="text" id="memeId" name="memeId" class="form-control" value="<%= meme.id %>" hidden>
+      
+<% if (meme.private === true && meme.copied === false) { %>
+  <form action="/bank/public" method="POST">
+    <input type="text" id="publicId" name="publicId" class="form-control" value="<%= meme.id %>" hidden>
+    <button type="submit" class="btn btn-primary">Make Public</button>
+    </form>
+<% } else if (meme.private === false && meme.copied === false){%>
+      <form action="/bank/private" method="POST">
+        <input type="text" id="privateId" name="privateId" class="form-control" value="<%= meme.id %>" hidden>
+        <button type="submit" class="btn btn-primary">Make Private</button>
+        </form>
+        <% } else if (meme.copied === true){%>
+          <h6>Created by:</h6>
+        <% } %>
+
+      <form action="/bank" method="POST">
+        <input type="text" id="memeId" name="memeId" class="form-control" value="<%= meme.id %>" hidden>
       <button type="submit" class="btn btn-primary">Delete</button>
+    </form>
     </div>
   </div>
 </div>
-</form>
   <% }) %>
 </div>
 </div>
