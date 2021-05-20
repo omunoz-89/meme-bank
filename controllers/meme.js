@@ -18,13 +18,13 @@ router.get('/', async (req,res) => {
 })
 
 router.post('/', isLoggedIn, async (req,res) => {
-  const {memeId,top_text,bottom_text} = req.body;
+  const {memeId,top_text,bottom_text,private} = req.body;
   try {
     const response = await fetch(`https://api.imgflip.com/caption_image?template_id=${memeId}&username=${process.env.IMG_USER}&password=${process.env.IMG_PASS}&text0=${top_text}&text1=${bottom_text}`)
     const responseData = await response.json()
     const img = responseData.data.url
     if(img){
-      const addMeme = await db.meme.create({img_url: img, userId:req.user.id})
+      const addMeme = await db.meme.create({img_url: img, userId:req.user.id, private:private})
       res.render('show', {newMeme: img})
     }
   } catch (error) {

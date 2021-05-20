@@ -4,6 +4,7 @@ const router = express.Router();
 const passport = require('../config/ppConfig');
 const db = require('../models');
 
+
 router.get('/signup', (req, res) => {
   res.render('auth/signup');
 });
@@ -23,6 +24,7 @@ router.post('/login', passport.authenticate('local', {
   failureRedirect: '/auth/login',
   successFlash: 'Welcome back ...',
   failureFlash: 'Either email or password is incorrect. Please try again' 
+
 }));
 
 router.post('/signup', async (req,res) => {

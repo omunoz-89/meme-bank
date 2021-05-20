@@ -38,7 +38,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/', async (req, res) => {
-  const memes = await db.meme.findAll()
+  const memes = await db.meme.findAll({where:{private:false||null}})
   res.render('index', {memes:memes});
 });
 
