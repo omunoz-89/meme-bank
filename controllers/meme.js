@@ -25,7 +25,7 @@ router.post('/', isLoggedIn, async (req,res) => {
     const img = responseData.data.url
     if(img){
       const addMeme = await db.meme.create({img_url: img, userId:req.user.id, private:private})
-      res.render('show', {newMeme: img})
+      res.redirect('bank')
     }
   } catch (error) {
     console.log('------ Error ------');
