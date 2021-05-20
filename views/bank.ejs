@@ -1,36 +1,55 @@
 <h1>Bank</h1>
 
 <div class="container">
-    <div class="row">
-  <% memes.forEach(meme => { %>
-    
-    <div class="col">
-        
-  <div class="card">
-    <img src="<%= meme.img_url %>" class="memeImg card-img-top">
-    <div class="card-body">
-      
-<% if (meme.private === true && meme.copied === false) { %>
-  <form action="/bank/public" method="POST">
-    <input type="text" id="publicId" name="publicId" class="form-control" value="<%= meme.id %>" hidden>
-    <button type="submit" class="btn btn-primary">Make Public</button>
-    </form>
-<% } else if (meme.private === false && meme.copied === false){%>
-      <form action="/bank/private" method="POST">
-        <input type="text" id="privateId" name="privateId" class="form-control" value="<%= meme.id %>" hidden>
-        <button type="submit" class="btn btn-primary">Make Private</button>
-        </form>
-        <% } else if (meme.copied === true){%>
-          <h6>Created by:</h6>
-        <% } %>
+  <div class="row row-cols-auto">
+    <% memes.forEach(meme => { %>
 
-      <form action="/bank" method="POST">
-        <input type="text" id="memeId" name="memeId" class="form-control" value="<%= meme.id %>" hidden>
-      <button type="submit" class="btn btn-primary">Delete</button>
-    </form>
+    <div class="col">
+      <div class="card">
+        <img src="<%= meme.img_url %>" class="memeImg card-img-top" />
+        <div class="card-body">
+          <div class="row justify-content-md-center">
+
+            <% if (meme.private === true && meme.copied === false) { %>
+
+              <div class="col">
+            <form action="/bank/public" method="POST" id="makePublic">
+              <input type="text" id="publicId" name="publicId" class="form-control" value="<%= meme.id %>" hidden/>
+              <button type="submit" class="btn btn-primary btn-sm text-nowrap">
+                Make Public
+              </button>
+            </form>
+          </div>
+
+            <% } else if (meme.private === false && meme.copied === false){%>
+
+              <div class="col">
+            <form action="/bank/private" method="POST" id="makePrivate">
+              <input type="text" id="privateId" name="privateId" class="form-control" value="<%= meme.id %>" hidden/>
+              <button type="submit" class="btn btn-primary btn-sm text-nowrap">
+                Make Private
+              </button>
+            </form>
+          </div>
+
+            <% } else if (meme.copied === true){%>
+            <h6>Created by:</h6>
+            <% } %>
+
+              <div class="col">
+            <form action="/bank" method="POST" id="delete">
+              <input type="text" id="memeId" name="memeId" class="form-control" value="<%= meme.id %>" hidden/>
+
+              <button type="submit" class="btn btn-primary btn-sm">
+                Delete
+              </button>
+            </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
+    <% }) %>
   </div>
-</div>
-  <% }) %>
-</div>
 </div>

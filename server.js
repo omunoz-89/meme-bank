@@ -54,7 +54,15 @@ app.get('/profile', isLoggedIn, (req, res) => {
 
 app.post('/', isLoggedIn, async function (req,res) {
   const {memeUrl} = req.body;
-  const addMeme = await db.meme.create({userId:req.user.id, img_url:memeUrl, copied:true})
+  const [meme, created] = await db.meme.findOrCreate({
+    where: {
+      userId: req.user.id,
+      img_url: memeUrl
+    },
+    defaults: {
+      copied:true
+    }
+  })
   res.redirect('bank')
 })
 
