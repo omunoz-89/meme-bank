@@ -38,7 +38,12 @@ app.use((req, res, next) => {
 });
 
 app.get('/', async (req, res) => {
-  const memes = await db.meme.findAll({where:{private:false||null}})
+  const memes = await db.meme.findAll({
+    where:{
+      private:false,
+      copied: false,
+    },
+  include: [db.user]})
   res.render('index', {memes:memes});
 });
 
@@ -46,6 +51,12 @@ app.get('/profile', isLoggedIn, (req, res) => {
   const { id, first_name, last_name, user_name, email } = req.user.get();
   res.render('profile', { id, first_name, last_name, user_name, email });
 });
+
+app.post('/', isLoggedIn, async function (req,res) {
+  const {memeUrl} = req.body;
+  const addMeme = await db.meme.create({userId:req.user.id, img_url:memeUrl, copied:true})
+  res.redirect('bank')
+})
 
 app.use('/auth', require('./controllers/auth'));
 app.use('/meme', require('./controllers/meme'));

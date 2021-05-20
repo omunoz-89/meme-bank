@@ -5,11 +5,14 @@
   <% memes.forEach(meme => { %>
     
     <div class="col">
+      <form action="/" method="POST">
   <div class="card">
-    <img src="<%= meme.img_url %>" class="memeImg card-img-top">
+    <img src="<%= meme.img_url %>" class="memeImg card-img-top" >
     <div class="card-body">
-      <input type="text" id="memeId" name="memeId" class="form-control" value="<%= meme.id %>" hidden>
+      <input type="text" id="memeUrl" name="memeUrl" class="form-control" value="<%= meme.img_url %>" hidden>
+      <h6>Created by: <%= meme.user.user_name%></h6>
       <button type="submit" class="btn btn-primary">+</button>
+      
     </div>
   </div>
 </div>

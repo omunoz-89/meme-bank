@@ -17,7 +17,8 @@ module.exports = (sequelize, DataTypes) => {
   meme.init({
     userId: DataTypes.INTEGER,
     img_url: DataTypes.STRING,
-    private: DataTypes.BOOLEAN
+    private: DataTypes.BOOLEAN,
+    copied: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'meme',
