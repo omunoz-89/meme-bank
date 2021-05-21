@@ -1,3 +1,4 @@
+<h1>Welcome to Meme Bank</h1>
 <h2>Recently Created</h2>
 
 <div class="container">
@@ -6,7 +7,16 @@
     
     <div class="col">
   <div class="card">
-    <img src="<%= meme.img_url %>" class="memeImg card-img-top" >
+
+    
+
+  <img src="<%= meme.img_url %>" class="memeImg card-img-top" >
+
+
+
+
+
+
     <div class="card-body">
       <h6>Created by: <%= meme.user.user_name%></h6>
 
@@ -14,7 +24,7 @@
         <input type="text" id="memeUrl" name="memeUrl" class="form-control" value="<%= meme.img_url %>" hidden>
       <button type="submit" class="btn btn-primary">+</button>
     </form>
-    
+
     </div>
   </div>
 </div>

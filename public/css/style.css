@@ -45,3 +45,9 @@ h5 {
 #delete {
   width: 50px;
 }
+
+h1,
+h2 {
+  text-align: center;
+}
+
