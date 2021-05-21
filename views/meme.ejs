@@ -1,28 +1,32 @@
 <form action="/meme" method="POST">
-<div id="memeDisplay" class="showContainer container">
+<div id="memeDisplay" class="container">
     <div class="row">
 <div class="col">
     <img id="selectedMeme" src="<%= meme0.url %>" alt="">
 </div>
 <div class="col mb-3">
         <input type="text" id="memeId" name="memeId" class="form-control" value="<%= meme0.id %>" hidden>
+        <div id="top">
         <label for="top_text" class="form-label">Top Text</label>
         <input type="text" id="top_text" name="top_text" class="form-control">
+        </div>
+        <div id="bottom">
         <label for="bottom_text" class="form-label">Bottom Text</label>
         <input type="text" id="bottom_text" name="bottom_text" class="form-control">
+      </div>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name="private" id="private">
           <label class="form-check-label" for="private">
             Private
           </label>
-        <button type="submit" class="btn btn-primary">Generate</button>
-    
+        <button type="submit" class="btn btn-primary" id="generate">Generate</button>
+    </div>
 </div>
 </div>
 </div>
 </form>
 
-  <div class="container">
+  <div id="templates" class="container">
     <div class="row row-cols-auto">
   <% meme.forEach(meme => { %>
     <div class="col">
