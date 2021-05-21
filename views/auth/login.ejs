@@ -1,9 +1,19 @@
-<form action="/auth/login" method="POST">
-  <label for="auth-user_name">User Name</label>
-  <input id="auth-user_name" type="name" name="user_name">
-
-  <label for="auth-password">Password</label>
-  <input id="auth-password" type="password" name="password">
-
-  <input type="submit" value="Log In">
-</form>
+<div class="card text-center" id="loginForm">
+  <div class="card-header">
+    <span class="formTitle">Enter Login Information</span>
+  </div>
+  <div class="card-body">
+    <form action="/auth/login" method="POST">
+      <div class="mb-3">
+        <label for="auth-user_name" class="form-label">Username</label>
+        <input type="name" name ="user_name" id="auth-user_name">
+      </div>
+      <div class="mb-3">
+        <label for="auth-password" class="form-label">Password</label>
+        <input type="password" id="auth-password" name="password"></input>
+      </div>
+    
+      <button type="submit" class="btn btn-primary">Log In</button>
+    </form>
+  </div>
+</div>

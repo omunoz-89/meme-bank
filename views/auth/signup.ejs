@@ -1,18 +1,32 @@
-<form action="/auth/signup" method="POST">
-  <label for="auth-first_name">First Name</label>
-  <input id="auth-first_name" type="name" name="first_name">
+<div class="card text-center" id="signUp">
+  <div class="card-header">
+    <span class="formTitle">Enter Info to Signup</span>
+  </div>
+  <div class="card-body">
+    <form action="/auth/signup" method="POST">
+      <div class="mb-3 row">
+        <label for="auth-first_name">First Name</label>
+        <input class="signUpInput" id="auth-first_name" type="name" name="first_name">
 
-  <label for="auth-last_name">Last Name</label>
-  <input id="auth-last_name" type="name" name="last_name">
-
-  <label for="auth-user_name">User Name</label>
-  <input id="auth-user_name" type="name" name="user_name">
-
-  <label for="new-email">Email</label>
-  <input id="new-email" type="email" name="email">
-
-  <label for="new-password">Password</label>
-  <input id="new-password" type="password" name="password">
-
-  <input type="submit" value="Sign up">
-</form>
+      </div>
+      <div class="mb-3 row">
+        <label for="auth-last_name">Last Name</label>
+        <input class="signUpInput" id="auth-last_name" type="name" name="last_name">
+      </div>
+      <div class="mb-3 row">
+        <label for="auth-user_name">User Name</label>
+        <input class="signUpInput" id="auth-user_name" type="name" name="user_name">
+      </div>
+      <div class="mb-3 row">
+        <label for="new-email">Email</label>
+        <input class="signUpInput" id="new-email" type="email" name="email">
+      </div>
+      <div class="mb-3 row">
+        <label for="new-password">Password</label>
+        <input class="signUpInput" id="new-password" type="password" name="password">
+      </div>
+    
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+    </form>
+  </div>
+</div>
