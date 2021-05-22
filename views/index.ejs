@@ -4,15 +4,15 @@
 <div class="container">
     <div class="row">
   <% memes.forEach(meme => { %>
-    
-    <div class="col">
+    <div class="col-3">
   <div class="card">
 
     
 
-  <img src="<%= meme.img_url %>" class="memeImg card-img-top" >
 
-
+    <a data-bs-toggle="modal" data-bs-target="#meme<%= meme.id %>">
+      <img src="<%= meme.img_url %>" class="memeImg card-img-top" >
+    </a>
 
 
 
@@ -22,8 +22,25 @@
 
       <form action="/" method="POST">
         <input type="text" id="memeUrl" name="memeUrl" class="form-control" value="<%= meme.img_url %>" hidden>
-      <button type="submit" class="buttons"><i class="fas fa-plus-square fa-2x" id="add"></i></button>
-      
+      <button type="submit" class="fas fa-plus-square fa-2x btn" id="add"></button>
+
+        <br>
+     
+
+      <div class="modal fade" id="meme<%= meme.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Created by: <%= meme.user.user_name%></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div id="modalBody" class="modal-body">
+              <img src="<%= meme.img_url %>" class="modalimg" >
+            </div>
+          </div>
+        </div>
+      </div>
+
 
 
     </form>

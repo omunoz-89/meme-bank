@@ -4,7 +4,7 @@
   <div class="row row-cols-auto">
     <% memes.forEach(meme => { %>
 
-    <div class="col">
+    <div class="col-3">
       <div class="card">
         <img src="<%= meme.img_url %>" class="memeImg card-img-top" />
         <div class="card-body">
@@ -31,9 +31,6 @@
               </button>
             </form>
           </div>
-
-            <% } else if (meme.copied === true){%>
-            <h6>Created by:</h6>
             <% } %>
 
               <div class="col">
