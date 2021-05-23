@@ -1,5 +1,23 @@
-<h2>Profile Page</h2>
-
-<p>Name <%= first_name %>&nbsp;<%= last_name %> </p>
-<p>Username <%= user_name %> </p>
-<p>Email <%= email %></p>
+<div class="card" id="profileCard">
+    <div class="card-header">
+        <h2>Profile Info</h2>
+    </div>
+    <div class="card-body">
+        <table class="table table-borderless table-sm">
+            <tbody>
+                <tr>
+                    <td>Name:</td>
+                     <td><%= first_name %>&nbsp;<%= last_name %></td>
+                </tr>
+                <tr>
+                    <td>Username:</td>
+                     <td><%= user_name %></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                     <td><%= email %></td>
+                </tr>
+    </tbody>
+    </table>
+    </div>
+  </div>

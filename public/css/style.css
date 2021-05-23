@@ -110,6 +110,7 @@ h2 {
 
 #modalBody {
   text-align: center;
+  margin: 15px;
 }
 
 #add {
@@ -121,6 +122,17 @@ h2 {
 
 #cardButtons {
   text-align: center;
+}
+
+#bankCont {
+  margin: 50px auto;
+}
+
+/* profile.ejs */
+
+#profileCard {
+  width: 650px;
+  margin: 50px auto;
 }
 
 @media (max-width: 500px) {
