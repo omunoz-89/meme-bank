@@ -6,8 +6,15 @@
 
     <div class="col-3">
       <div class="card">
-        <img src="<%= meme.img_url %>" class="memeImg card-img-top" />
+
+        <a data-bs-toggle="modal" data-bs-target="#meme<%= meme.id %>">
+          <img src="<%= meme.img_url %>" class="memeImg card-img-top" >
+        </a>
+
         <div class="card-body">
+
+
+
           <div class="row justify-content-center gx-4" id="cardButtons">
 
             <% if (meme.private === true && meme.copied === false) { %>
@@ -40,6 +47,18 @@
               <button type="submit" class="btn btn-primary btn-sm">
                 Delete
               </button>
+
+
+      <div class="modal fade" id="meme<%= meme.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div id="modalBody" class="modal-body">
+              <img src="<%= meme.img_url %>" class="modalimg" >
+            </div>
+          </div>
+        </div>
+      </div>
+
             </form>
             </div>
 
