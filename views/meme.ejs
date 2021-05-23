@@ -2,7 +2,7 @@
 <div id='newMeme' class='container-fluid px-4'>
     <div class='row justify-content-center gx-5'>
 <div class='col-6'>
-    <img id='selectedMeme' src='<%= meme0.url %>'>
+    <img id='selectedMeme' src='<%= meme0.url %>' class="rounded shadow p-3 mb-5 bg-body rounded">
 </div>
 <div class='col-4'>
         <input type='text' id='memeId' name='memeId' class='form-control' value='<%= meme0.id %>' hidden>
@@ -30,8 +30,8 @@
     <div class='row row-cols-auto'>
   <% meme.forEach(meme => { %>
     <div class='col-3'>
-  <div class='card'>
-    <a href='#' onclick='createMeme(this)' id='<%= meme.id %>' name='<%= meme.url %>'><img id='<%= meme.id %>' src='<%= meme.url %>' class='memeImg card-img-top'></a>
+  <div class='card shadow p-3 mb-5 bg-body rounded'>
+    <a href='#' onclick='createMeme(this)' id='<%= meme.id %>' name='<%= meme.url %>'><img id='<%= meme.id %>' src='<%= meme.url %>' class='memeImg card-img-top rounded'></a>
     <div class='card-body'>
       <h5 class='card-title'><%= meme.name %></h5>
       <a href='#' class='btn btn-primary' id='<%= meme.id %>' name='<%= meme.url %>' onclick='createMeme(this)'>Create Meme</a>

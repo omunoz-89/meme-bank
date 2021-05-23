@@ -5,13 +5,13 @@
     <div class="row">
   <% memes.forEach(meme => { %>
     <div class="col-3">
-  <div class="card">
+  <div class="card shadow p-3 mb-5 bg-body rounded">
 
     
 
 
     <a data-bs-toggle="modal" data-bs-target="#meme<%= meme.id %>">
-      <img src="<%= meme.img_url %>" class="memeImg card-img-top" >
+      <img src="<%= meme.img_url %>" class="memeImg card-img-top rounded" >
     </a>
 
 
@@ -35,7 +35,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div id="modalBody" class="modal-body">
-              <img src="<%= meme.img_url %>" class="modalimg" >
+              <img src="<%= meme.img_url %>" class="modalimg rounded" >
             </div>
           </div>
         </div>
