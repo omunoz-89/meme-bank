@@ -1,18 +1,18 @@
 <h1>Bank</h1>
 
 <div class="container">
-  <div class="row row-cols-auto">
+  <div class="row">
     <% memes.forEach(meme => { %>
 
     <div class="col-3">
       <div class="card">
         <img src="<%= meme.img_url %>" class="memeImg card-img-top" />
         <div class="card-body">
-          <div class="row justify-content-md-center">
+          <div class="row justify-content-center gx-4" id="cardButtons">
 
             <% if (meme.private === true && meme.copied === false) { %>
 
-              <div class="col">
+              <div class="col-5">
             <form action="/bank/public" method="POST" id="makePublic">
               <input type="text" id="publicId" name="publicId" class="form-control" value="<%= meme.id %>" hidden/>
               <button type="submit" class="btn btn-primary btn-sm text-nowrap">
@@ -23,7 +23,7 @@
 
             <% } else if (meme.private === false && meme.copied === false){%>
 
-              <div class="col">
+              <div class="col-5">
             <form action="/bank/private" method="POST" id="makePrivate">
               <input type="text" id="privateId" name="privateId" class="form-control" value="<%= meme.id %>" hidden/>
               <button type="submit" class="btn btn-primary btn-sm text-nowrap">
@@ -33,7 +33,7 @@
           </div>
             <% } %>
 
-              <div class="col">
+              <div class="col-4">
             <form action="/bank" method="POST" id="delete">
               <input type="text" id="memeId" name="memeId" class="form-control" value="<%= meme.id %>" hidden/>
 
