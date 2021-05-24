@@ -4,16 +4,19 @@
   </div>
   <div class="card-body">
     <form action="/auth/login" method="POST">
-      <div class="mb-3">
-        <label for="auth-user_name" class="form-label">Username</label>
-        <input type="name" name ="user_name" id="auth-user_name">
+      <div class="loginRow row g-3">
+        <div class="col">
+        <input type="name" name ="user_name"  class="form-control" placeholder="Username" id="auth-user_name">
       </div>
-      <div class="mb-3">
-        <label for="auth-password" class="form-label">Password</label>
-        <input type="password" id="auth-password" name="password"></input>
+    </div>
+
+      <div class="loginRow row g-3">
+        <div class="col">
+        <input type="password" id="auth-password"  class="form-control" placeholder="Password" name="password"></input>
       </div>
-    
+    </div>
       <button type="submit" class="btn btn-primary">Log In</button>
     </form>
   </div>
 </div>
+
