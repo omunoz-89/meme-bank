@@ -26,8 +26,16 @@ nav ul li {
   text-decoration: none;
   display: inline-block;
   margin-right: 0.3em;
-  /* font-size: 1.2rem; */
   font-size: calc(0.5rem + 1vw);
+}
+
+#appName {
+  margin-right: 0.8em;
+  font-size: calc(0.5rem + 1vw);
+  font-weight: 700;
+  background: -webkit-linear-gradient(360deg, #86d19f 30%, #459cad 72%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .memeImg {
