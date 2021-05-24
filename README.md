@@ -7,6 +7,9 @@
 - [General Info](general-info)
 - [Setup](#setup)
 - [Technologies](#technologies)
+- [CRUD](#crud)
+- [Initial Wireframe](#initial-wireframe)
+- [ERD](#erd)
 - [Status](#status)
 - [Future Considerations](#future-considerations)
 
@@ -33,12 +36,32 @@ This project was created using:
 - Express
 - Postgres
 
+### CRUD
+| VERB | URL | Action \(CRUD\) | Description |
+| :--- | :--- | :--- | :--- |
+| GET | / | index \(Read\) | Shows recently created memes |
+| POST | /signup | Create \(Create\) | SignUp page |
+| GET | /login | Read \(Read\) | SignUp page |
+| GET | /bank | Read \(Read\) | Show your saved memes |
+| GET | /meme | Read \(Read\) | shows a form to make a new meme |
+| POST | /meme | Create \(Create\) | creates a meme with the POST payload data |
+| POST | /bank/private | Update \(Update\) | Sets meme to private |
+| POST | /bank/public | Update \(Update\) | Sets meme to public |
+| DELETE | /bank | Destroy \(Delete\) | deletes the meme selected on screen |
 
-## Status
+
+### Initial Wireframe
+
+![MemeBank](images/readme/MemeBank.png)
+
+### ERD
+![MemeBank](images/readme/FinalERD.png)
+
+### Status
 
 Completed & live on Heroku
 
-## FUTURE CONSIDERATIONS
+### FUTURE CONSIDERATIONS
 
 1. Add up-vote and down-vote capabilities
 2. Upload your own images to create memes
