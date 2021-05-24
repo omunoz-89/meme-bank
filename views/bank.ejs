@@ -1,7 +1,7 @@
 <div class="container" id="bankCont">
   <div class="row">
     <% memes.forEach(meme => { %>
-    <div class="col-3">
+    <div class="col-sm-3">
       <div class="card shadow mb-5 bg-body rounded">
         <a data-bs-toggle="modal" data-bs-target="#meme<%= meme.id %>">
           <img src="<%= meme.img_url %>" class="memeImg card-img-top rounded" />
@@ -9,7 +9,7 @@
         <div class="card-body">
           <div class="row justify-content-center gx-4" id="cardButtons">
             <% if (meme.private === true && meme.copied === false) { %>
-            <div class="col-5">
+            <div class="col-sm-5">
               <form action="/bank/public" method="POST" id="makePublic">
                 <input
                   type="text"
@@ -28,7 +28,7 @@
               </form>
             </div>
             <% } else if (meme.private === false && meme.copied === false){%>
-            <div class="col-5">
+            <div class="col-sm-5">
               <form action="/bank/private" method="POST" id="makePrivate">
                 <input
                   type="text"
@@ -47,7 +47,7 @@
               </form>
             </div>
             <% } %>
-            <div class="col-4">
+            <div class="col-sm-4">
               <form action="/bank" method="POST" id="delete">
                 <input
                   type="text"
