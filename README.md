@@ -15,7 +15,12 @@
 
 ### General Info
 
-The intention of this app is to create and store memes.
+For my unit-2 project in General Assembly's SEI course, I created a Meme Bank app.
+Create and store your favorite memes for easy access whenever you need them.
+Recently created memes will show up on the homepage.
+You'll have the option to make your created memes private, so they wont show up on the homepage.
+Add memes from the homepage to your bank.
+If you no longer like a certain meme in your bank, you have the option to delete it.
 
 
 ### Setup
