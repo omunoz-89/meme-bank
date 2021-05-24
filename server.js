@@ -39,10 +39,14 @@ app.use((req, res, next) => {
 
 app.get('/', async (req, res) => {
   const memes = await db.meme.findAll({
+    limit: 25,
     where:{
       private:false,
       copied: false,
     },
+    order: [
+      ['id', 'DESC']
+  ],
   include: [db.user]})
   res.render('index', {memes:memes});
 });
@@ -80,7 +84,7 @@ app.get('*', function(req, res){
 });
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 const server = app.listen(PORT, () => {
   console.log(`🎧 You're listening to the smooth sounds of port ${PORT} 🎧`);
 });
