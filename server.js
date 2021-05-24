@@ -71,6 +71,13 @@ app.use('/meme', require('./controllers/meme'));
 app.use('/bank', require('./controllers/bank'));
 
 
+app.get('/error',function(req, res){
+  res.render('error')
+});
+
+app.get('*', function(req, res){
+  res.redirect('/error')
+});
 
 
 const PORT = process.env.PORT || 3000;

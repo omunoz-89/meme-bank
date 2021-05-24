@@ -56,6 +56,10 @@ h2 {
   margin-bottom: -5px ;
 }
 
+#error {
+  width: 100%;
+}
+
 /* login/signup ejs */
 
 #loginForm {
@@ -132,7 +136,8 @@ h2 {
 
 /* profile.ejs */
 
-#profileCard {
+#profileCard,
+#errorCard {
   width: 650px;
   margin: 50px auto;
 }
