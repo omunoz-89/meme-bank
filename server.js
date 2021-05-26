@@ -39,7 +39,7 @@ app.use((req, res, next) => {
 
 app.get('/', async (req, res) => {
   const memes = await db.meme.findAll({
-    limit: 25,
+    limit: 80,
     where:{
       private:false,
       copied: false,
